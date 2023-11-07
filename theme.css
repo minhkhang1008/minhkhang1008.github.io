@@ -1,0 +1,41 @@
+body {
+    background-color: #cfe2ff;
+    font-family: sans-serif;
+  }
+  
+  canvas {
+    border: 1px solid #4568dc;
+    border-radius: 5px;
+  }
+  
+  button {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    top: 10px;
+    background-color: #4568dc;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    padding: 30px;
+    cursor: pointer;
+    z-index: 2;
+  }
+  
+  a {
+    position: absolute;
+    bottom: 20px;
+    right: 120px; /* New line */
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-decoration: none;
+    z-index: 1;
+  }
+  
+  p {
+    color: #4568dc;
+  }
+  
