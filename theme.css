@@ -24,7 +24,7 @@ body {
   
   a {
     position: absolute;
-    bottom: 20px;
+    bottom: 15px;
     right: 120px; /* New line */
     background-color: white;
     color: black;
@@ -34,6 +34,13 @@ body {
     text-decoration: none;
     z-index: 1;
   }
+  
+  a {
+    font-size: 29px; /* New line */
+    padding: 30px 60px; /* New line */
+  }
+  
+
   
   p {
     color: #4568dc;
