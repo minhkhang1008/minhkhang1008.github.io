@@ -11,7 +11,7 @@ const obstacleHeight = 50;
 let carX = canvasWidth / 2 - carWidth / 2;
 const carY = canvasHeight - carHeight - 10;
 const carSpeed = 5;
-const obstacleSpeed = 10;
+let obstacleSpeed = 15; // Increased obstacle speed
 let obstacleX = Math.random() * (canvasWidth - obstacleWidth);
 let obstacleY = -obstacleHeight;
 const maxObstacles = 5;
@@ -52,22 +52,24 @@ function onMouseMove(event) {
         const mouseX = event.clientX - canvas.getBoundingClientRect().left;
         const mouseY = event.clientY - canvas.getBoundingClientRect().top;
 
-        carX = mouseX - carWidth / 2;
-        carY = mouseY - carHeight / 2;
+        // Apply boundary checks for mouse movement
+        let newCarX = mouseX - carWidth / 2;
+        if (newCarX < 0) {
+            newCarX = 0;
+        } else if (newCarX + carWidth > canvasWidth) {
+            newCarX = canvasWidth - carWidth;
+        }
 
-        // Ensure the car stays within the canvas boundaries
-        if (carX < 0) {
-            carX = 0;
+        carX = newCarX;
+
+        let newCarY = mouseY - carHeight / 2;
+        if (newCarY < 0) {
+            newCarY = 0;
+        } else if (newCarY + carHeight > canvasHeight) {
+            newCarY = canvasHeight - carHeight;
         }
-        if (carX > canvasWidth - carWidth) {
-            carX = canvasWidth - carWidth;
-        }
-        if (carY < 0) {
-            carY = 0;
-        }
-        if (carY > canvasHeight - carHeight) {
-            carY = canvasHeight - carHeight;
-        }
+
+        carY = newCarY;
     }
 }
 
@@ -126,11 +128,12 @@ function updateGameArea() {
 
     if (!isGameOver) {
         gameTime++; // Increment game time in seconds
-        score++
+        score++;
         localStorage.setItem('gameTime', gameTime);
         localStorage.setItem('score', score);
 
-        if (obstacles.length < maxObstacles && Math.random() < 0.02) {
+        if (obstacles.length <
+ maxObstacles && Math.random() < 0.02) {
             const obstacle = {
                 x: Math.random() * (canvasWidth - obstacleWidth),
                 y: -obstacleHeight,
