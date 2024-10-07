@@ -1,0 +1,99 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #a8edea, #fed6e3);
+    text-align: center;
+    color: #444;
+    margin: 0;
+    padding: 0;
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.quizizz-container {
+    max-width: 80%;
+    margin: 20px auto;
+    background: #fff;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    animation: slideUp 1.5s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.quizizz-frame {
+    width: 100%;
+    height: 80vh;
+    border: none;
+    border-radius: 10px;
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+    animation: bounceIn 2s ease-in-out;
+}
+
+.finished-button {
+    position: fixed;
+    bottom: 15px;
+    right: 20px;
+    padding: 10px 15px;
+    font-size: 0.9rem;
+    color: #fff;
+    background-color: #32cd32;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 5;
+}
+
+.finished-button:hover {
+    background-color: #228b22;
+    transform: scale(1.1);
+}
+
+.finished-button.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+@keyframes bounceIn {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}

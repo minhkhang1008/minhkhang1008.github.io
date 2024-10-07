@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="main.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
+    <title>Giáo dục an toàn giao thông</title>
+</head>
+<body>
+    <div class="header">
+        <img src="logotruong.png" alt="Competition Logo" class="logo">
+        <h1>Giáo dục an toàn giao thông</h1>
+        <p>Giới thiệu về những hoạt động giáo dục an toàn giao thông tại trường Hoàng Quốc Việt | Giáo dục an toàn giao thông qua trò chơi</p>
+    </div>
+
+    <div class="center">
+        <button id="startButton" class="start-btn">Bắt đầu khám phá</button>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Giáo dục an toàn giao thông | Thiết kế bởi Nguyễn Hoàng Minh Khang</p>
+        <p>Học sinh lớp 9TH - trường THCS Hoàng Quốc Việt | Thông tin thêm và source code: <a href="https://github.com/minhkhang1008/minhkhang1008.github.io">Github repository</a></p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            document.querySelector('.header').classList.add('animate');
+            document.querySelector('.start-btn').classList.add('animate');
+            document.querySelector('.footer').classList.add('animate');
+        });
+
+        document.getElementById('startButton').addEventListener('click', function() {
+            document.body.classList.add('fade-out'); 
+            setTimeout(function() {
+                window.location.href = 'gallery.html';
+            }, 300);
+        });
+    </script>
+</body>
+</html>
