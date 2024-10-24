@@ -1,5 +1,3 @@
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const albums = [
         { folder: '1', count: 45, type: 'image', description: 'Chuyên đề An toàn giao thông các năm tại trường THCS Hoàng Quốc Việt' },
