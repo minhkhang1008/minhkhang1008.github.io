@@ -78,8 +78,9 @@
             { folder: '6', count: 3, type: 'image', description: 'Hình ảnh học sinh trước cổng trường Hoàng Quốc Việt' },
             { folder: '7', count: 20, type: 'image', description: 'Hình ảnh giải thưởng An toàn giao thông cho nụ cười ngày mai' },
             { folder: '8', count: 10, type: 'video', description: 'Các hoạt động tuyên truyền của trường Hoàng Quốc Việt' },
-            { folder: '9', count: 8, type: 'video', description: 'HS HQV tham gia tuyên truyền ATGT cuộc thi "ATGT cho nụ cười ngày mai 2024_2025"'}
-        ];
+            { folder: '9', count: 8, type: 'video', description: 'HS HQV tham gia tuyên truyền ATGT cuộc thi "ATGT cho nụ cười ngày mai 2024_2025'}
+    ];      
+
 
         let currentAlbumIndex = 0;
         let currentIndex = 1;
@@ -92,12 +93,13 @@
             const currentAlbum = albums[currentAlbumIndex];
             descriptionElement.textContent = currentAlbum.description;
 
+            console.log(`Current Album Index: ${currentAlbumIndex}, Current Index: ${currentIndex}, Album Type: ${currentAlbum.type}`);
 
             document.querySelectorAll('.media-element').forEach(el => {
                 el.classList.remove('active-media');
                 el.style.display = 'none';
             });
-
+        
             if (currentAlbum.type === 'image') {
                 imageElement.src = `${currentAlbum.folder}/${currentIndex}.png`;
                 imageElement.classList.add('active-media');
@@ -109,6 +111,7 @@
                 videoElement.style.display = 'block';
             }
         }
+
 
         document.getElementById('leftArrow').addEventListener('click', () => {
             currentIndex--;
